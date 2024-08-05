@@ -1,7 +1,10 @@
+using System.Runtime.Serialization;
+
 namespace PruebaVeterinaryCenter.models
 {
     public class Animal
     {
+        private static int currentId = 0; // mantener el último Id generado
         protected int Id;
         protected string Name;
         protected DateOnly BirthDate;
@@ -11,12 +14,19 @@ namespace PruebaVeterinaryCenter.models
 
 
         //miembros constructor
-        public Animal()
+        public Animal(string name,DateOnly birthDate,string breed,string color,double weightInKg)
         {
-            
+            this.Id = ++currentId; // Incrementa y asigna un nuevo Id único
+            this.Name = name;
+            this.BirthDate = birthDate;
+            this.Breed = breed;
+            this.Color = color;
+            this.WeightnKg = weightInKg;
         }
 
-        public void ShowInformacion(){}
+        public void ShowInformacion(){
+            
+        }
 
         protected void BasicReview(){
 
@@ -27,3 +37,4 @@ namespace PruebaVeterinaryCenter.models
         }
     }
 }
+

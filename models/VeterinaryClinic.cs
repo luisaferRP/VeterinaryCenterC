@@ -7,8 +7,8 @@ namespace PruebaVeterinaryCenter.models
     {
         public string Name;
         public string Address;
-        public List<Dog> Dogs = new List<Dog>();
-        public List<Cat> Cats = new List<Cat>();
+        public static List<Dog> Dogs = new List<Dog>();
+        public static List<Cat> Cats = new List<Cat>();
 
         //miembros metodos
         public VeterinaryClinic()
@@ -23,7 +23,9 @@ namespace PruebaVeterinaryCenter.models
         }
 
         //metodo para agregar un perro a la clinica
-        public void SaveDog(Dog newDog){
+        public static void SaveDog(Dog newDog){
+            Dogs.Add(newDog);
+            Menssage.CreateSucces();
 
         }
 

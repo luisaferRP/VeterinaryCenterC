@@ -1,6 +1,6 @@
 namespace PruebaVeterinaryCenter.models
 {
-    public class Dog
+    public class Dog : Animal
     {
         //Miembros atributos
         //estado de el animal
@@ -8,12 +8,12 @@ namespace PruebaVeterinaryCenter.models
         public string Temperament;
         public string MicrochipNumber;
         public string BarkVolume;
-
         //tipo de abrigo
         public string CoatType;
 
         //miembro constructor
-        public Dog()
+        public Dog(string name,DateOnly birthdate,string breed,string color,double weightInKg,bool breedingStatus,string temperament,
+        string microchipNumber,string barkVolume,string coatType): base(name,birthdate,breed,color,weightInKg)
         {
         }
 

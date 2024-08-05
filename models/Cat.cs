@@ -1,6 +1,6 @@
 namespace PruebaVeterinaryCenter.models
 {
-    public class Cat
+    public class Cat : Animal
     {
         //miembros atributos
         public bool BreedingStatus;
