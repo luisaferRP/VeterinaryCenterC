@@ -1,0 +1,15 @@
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/PruebaVeterinaryCenter.GeneratedMSBuildEditorConfig.editorconfig
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/PruebaVeterinaryCenter.AssemblyInfoInputs.cache
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/PruebaVeterinaryCenter.AssemblyInfo.cs
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/PruebaVeterinaryCenter.csproj.CoreCompileInputs.cache
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/PruebaVeterinaryCenter.sourcelink.json
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/bin/Debug/net8.0/PruebaVeterinaryCenter
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/bin/Debug/net8.0/PruebaVeterinaryCenter.deps.json
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/bin/Debug/net8.0/PruebaVeterinaryCenter.runtimeconfig.json
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/bin/Debug/net8.0/PruebaVeterinaryCenter.dll
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/bin/Debug/net8.0/PruebaVeterinaryCenter.pdb
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/PruebaVeterinaryCenter.dll
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/refint/PruebaVeterinaryCenter.dll
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/PruebaVeterinaryCenter.pdb
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/PruebaVeterinaryCenter.genruntimeconfig.cache
+/home/riwip5-029/luisaRamirez/C#/PruebaVeterinaryCenter/obj/Debug/net8.0/ref/PruebaVeterinaryCenter.dll
