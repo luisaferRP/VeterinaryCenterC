@@ -155,6 +155,22 @@ namespace PruebaVeterinaryCenter.models
         //mostrar paciente
         public void ShowPatient(int idPatient)
         {
+            Console.WriteLine($"----------------------Animales con id: {idPatient}----------------------");
+            var findDog = Dogs.FirstOrDefault(item => item.ReturnId() == idPatient);
+            var findCat = Cats.FirstOrDefault(item => item.ReturnId() == idPatient);
+
+            if (findDog != null)
+            {
+                findDog.ShowInformacionDog();
+            }
+            else if(findCat != null)
+            {
+                findCat.ShowInformacionCat();
+            }
+            else
+            {
+                Console.WriteLine("No hay pacientes registrados con ese id.");
+            }
 
         }
     }

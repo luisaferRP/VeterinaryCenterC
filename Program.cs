@@ -79,6 +79,9 @@ class Program
                         case 4:
                             SeeAnimalByType();
                             break;
+                        case 5:
+                            seeAnimalById();
+                            break;
 
                         default:
                             break;
@@ -254,5 +257,14 @@ class Program
             seeAnimal.ShowAnimals(breed);
         }
     
+        //ver animal por id
+        void seeAnimalById(){
+            Console.WriteLine("Ingresa el id de el animal deseas ver : ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            var seeAnimal = new VeterinaryClinic();
+            seeAnimal.ShowPatient(id);
+
+        }
     }
 }
