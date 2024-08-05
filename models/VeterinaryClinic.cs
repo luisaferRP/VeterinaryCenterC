@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Common;
+using System.Runtime.CompilerServices;
 
 namespace PruebaVeterinaryCenter.models
 {
@@ -35,7 +36,6 @@ namespace PruebaVeterinaryCenter.models
         {
             Cats.Add(newCat);
             Menssage.CreateSucces();
-
         }
 
         //metodo para actualizar un perro 
@@ -132,13 +132,14 @@ namespace PruebaVeterinaryCenter.models
         public void ShowAnimals(string type)
         {
             Console.WriteLine($"----------------------Animales de raza: {type}----------------------");
-            var findBreedD= Dogs.Where(item => item.RetrunBreed() == type ).ToList();
-            var findBreedC= Cats.Where(item => item.RetrunBreed() == type ).ToList();
+            var findBreedD = Dogs.Where(item => item.RetrunBreed() == type).ToList();
+            var findBreedC = Cats.Where(item => item.RetrunBreed() == type).ToList();
 
             if (findBreedD.Count == 0 && findBreedC.Count == 0)
             {
                 Console.WriteLine("No hay animales de esa raza registrados.");
-            }else
+            }
+            else
             {
                 foreach (var item in findBreedD)
                 {
@@ -148,7 +149,7 @@ namespace PruebaVeterinaryCenter.models
                 {
                     item.ShowInformacionCat();
                 }
-                
+
             }
         }
 
@@ -163,7 +164,7 @@ namespace PruebaVeterinaryCenter.models
             {
                 findDog.ShowInformacionDog();
             }
-            else if(findCat != null)
+            else if (findCat != null)
             {
                 findCat.ShowInformacionCat();
             }
@@ -173,5 +174,54 @@ namespace PruebaVeterinaryCenter.models
             }
 
         }
+
+        //Buscar animal para castrar
+        public void CastrateAnimal(int idAnimal)
+        {
+            var findDog = Dogs.Where(item => item.ReturnId() == idAnimal).Select(item => new
+            {
+                id = item.ReturnId(),
+                castrated = item.isCastrated
+            }).ToList();
+
+            var findCat = Cats.Where(item => item.ReturnId() == idAnimal).Select(item => new
+            {
+                id = item.ReturnId(),
+                castrated = item.isCastrated
+            }).ToList();
+
+            if (findDog != null || findDog.Count != 0)
+            {
+                foreach (var item in findDog)
+                {
+                    if (item.castrated == false)
+                    {
+                        Console.WriteLine($"El perro con el id: {item.id} , no ha sido castrado");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"El perro con el id: {item.id} , ya ha sido castrado");
+                    }
+
+                }
+            }
+            else if (findCat != null || findCat.Count != 0)
+            {
+
+                foreach (var item in findCat)
+                {
+                    if (item.castrated == false)
+                    {
+                        Console.WriteLine($"El gato con el id: {item.id} , no ha sido castrado");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"El gato con el id: {item.id} , ya ha sido castrado");
+                    }
+
+                }
+            }
+        }
+
     }
 }

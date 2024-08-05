@@ -36,7 +36,7 @@ namespace PruebaVeterinaryCenter.models
             Estado de reproducción: {BreedingStatus}, Temperamento: {Temperament}, 
             Numero de microchip: {MicrochipNumber},
             Volumen del ruido de ladrar: {BarkVolume} , Tipo de pelo: {CoatType}
-            ________________________________________________________");
+            _________________________________________________________________________");
         }
 
     }

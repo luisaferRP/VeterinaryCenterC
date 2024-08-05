@@ -97,7 +97,6 @@ class Program
 
                 }
 
-
             }
             catch (System.Exception)
             {
@@ -144,7 +143,6 @@ class Program
             deleteCat.DeleteCat(id);
 
         }
-    
 
         //ver animal por tipo
         void SeeAnimalByType(){
@@ -164,5 +162,15 @@ class Program
             seeAnimal.ShowPatient(id);
 
         }
+    
+        //animal castrado
+        void CastrateAnimal(){
+            Console.Write("Ingrese el id del animal que desea castrar: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            var seeAnimal = new VeterinaryClinic();
+            seeAnimal.CastrateAnimal(id);
+        }
+    
     }
 }
