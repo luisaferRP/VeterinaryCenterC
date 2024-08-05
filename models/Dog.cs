@@ -33,10 +33,11 @@ namespace PruebaVeterinaryCenter.models
         public void ShowInformacionDog(){
             base.ShowInformacion(); 
             Console.WriteLine(@$"
-            Estado de reproducción: {BreedingStatus}, Temperamento: {Temperament}, 
+            Temperamento: {Temperament}, Tipo de pelo: {CoatType}
+            Estado de reproducción: {BreedingStatus},
             Numero de microchip: {MicrochipNumber},
-            Volumen del ruido de ladrar: {BarkVolume} , Tipo de pelo: {CoatType}
-            _________________________________________________________________________");
+            Volumen del ruido de ladrar: {BarkVolume} 
+            ________________________________________________________________________________");
         }
 
     }

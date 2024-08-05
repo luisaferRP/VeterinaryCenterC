@@ -31,8 +31,8 @@ namespace PruebaVeterinaryCenter.models
 
         public void ShowInformacion(){
             Console.WriteLine(@$"
-            ________________________________________________________
-            Id:{Id} Nombre:{Name}, Fecha Nacimiento: {BirthDate},
+            ________________________________________________________________________________
+            Id:{Id,-5} Nombre:{Name,-2}, Fecha Nacimiento: {BirthDate},
             Raza: {Breed} , Color: {Color}, Peso : {WeightnKg},");
         }
 
@@ -41,7 +41,11 @@ namespace PruebaVeterinaryCenter.models
         }
 
         protected int CalculateAgeInMonths(){
-            return 0;
+            var age = DateOnly.Today.Year - BirthDate.Year;
+            
+            return age;
+
+
         }
 
         public int ReturnId(){

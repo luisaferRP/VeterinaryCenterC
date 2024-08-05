@@ -28,7 +28,7 @@ namespace PruebaVeterinaryCenter.models
             base.ShowInformacion(); 
             Console.WriteLine(@$"
             Estado de reproducción: {BreedingStatus}, Tipo de pelo: {FurLength}
-            ________________________________________________________");
+            ________________________________________________________________________________");
         }
         
     }

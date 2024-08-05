@@ -14,6 +14,7 @@ namespace PruebaVeterinaryCenter.models
                 5.Mostrar paciente por ID.
                 6.Castrar animal.
                 7.Salir.
+            =================================================
                 Por favor elija una opción: ");
         }
     }

@@ -99,7 +99,11 @@ namespace PruebaVeterinaryCenter.models
         //Mostrar todos los pacientes
         public void ShowAllPatients()
         {
-            Console.WriteLine("---------------- Estos son todos los pacientes -----------------");
+            Console.WriteLine(@"
+            ==================================================================================
+                                    Estos son todos los pacientes 
+            ==================================================================================
+            ");
             if (Dogs.Count == 0)
             {
                 Console.WriteLine("No hay perros registrados en este mometos");
@@ -131,7 +135,10 @@ namespace PruebaVeterinaryCenter.models
         //Mostrar todos los animales
         public void ShowAnimals(string type)
         {
-            Console.WriteLine($"----------------------Animales de raza: {type}----------------------");
+            Console.WriteLine(@$"
+            ==========================================================================
+                                    Animales de raza: {type}
+            ==========================================================================");
             var findBreedD = Dogs.Where(item => item.RetrunBreed() == type).ToList();
             var findBreedC = Cats.Where(item => item.RetrunBreed() == type).ToList();
 
@@ -156,7 +163,10 @@ namespace PruebaVeterinaryCenter.models
         //mostrar paciente
         public void ShowPatient(int idPatient)
         {
-            Console.WriteLine($"----------------------Animales con id: {idPatient}----------------------");
+            Console.WriteLine(@$"
+            =================================================================
+                                Animales con id: {idPatient}
+            =================================================================");
             var findDog = Dogs.FirstOrDefault(item => item.ReturnId() == idPatient);
             var findCat = Cats.FirstOrDefault(item => item.ReturnId() == idPatient);
 

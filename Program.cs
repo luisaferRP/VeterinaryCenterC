@@ -85,9 +85,11 @@ class Program
                             seeAnimalById();
                             break;
                         case 6:
-                            //castrat
+                            CastrateAnimal();
                             break;
                         case 7:
+                            Console.WriteLine("Preciona cualquier tecla para salir");
+                            Console.Read();
                             bandera = false;
                             break;
 
@@ -101,7 +103,7 @@ class Program
             catch (System.Exception)
             {
 
-                throw;
+                Console.WriteLine("Ha ocurrido un error,ejecute de nuevo el programa...");
             }
 
 
@@ -118,7 +120,7 @@ class Program
 
         //eliminar
         void DeleteDog(){
-            Console.WriteLine("Ingrese el id dee el perro que desea eliminar: ");
+            Console.WriteLine("Ingrese el id de el perro que desea eliminar: ");
             int id = Convert.ToInt32(Console.ReadLine());
 
             var deleteDog = new VeterinaryClinic();

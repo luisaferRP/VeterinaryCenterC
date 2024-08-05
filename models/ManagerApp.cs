@@ -26,6 +26,7 @@ namespace PruebaVeterinaryCenter.models
                                 name = Console.ReadLine();
                                 if (string.IsNullOrWhiteSpace(name))
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("El nombre no puede estar vacío. Inténtalo de nuevo.");
                                         continue;
                                 }
@@ -56,6 +57,7 @@ namespace PruebaVeterinaryCenter.models
                                 breed = Console.ReadLine();
                                 if (string.IsNullOrWhiteSpace(breed))
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("La raza no puede estar vacía. Inténtalo de nuevo.");
                                         continue;
                                 }
@@ -68,6 +70,7 @@ namespace PruebaVeterinaryCenter.models
                                 color = Console.ReadLine();
                                 if (string.IsNullOrWhiteSpace(color))
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("El color no puede estar vacío. Inténtalo de nuevo.");
                                         continue;
                                 }
@@ -83,6 +86,7 @@ namespace PruebaVeterinaryCenter.models
                                 }
                                 else
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("El peso debe ser un número positivo. Inténtalo de nuevo.");
                                 }
                         }
@@ -103,6 +107,7 @@ namespace PruebaVeterinaryCenter.models
                                 }
                                 else
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("Opción invalida,recuerda 1 o 2 Inténtalo de nuevo.");
                                 }
                         }
@@ -128,7 +133,8 @@ namespace PruebaVeterinaryCenter.models
                                 }
                                 else
                                 {
-                                        Console.WriteLine("Opción invalida. Usa 1, 2 o 3. Inténtalo de nuevo.");
+                                        Menssage.InvalidData();
+                                        Console.WriteLine("Usa 1, 2 o 3. Inténtalo de nuevo.");
                                 }
                         }
 
@@ -148,7 +154,8 @@ namespace PruebaVeterinaryCenter.models
                                 }
                                 else
                                 {
-                                        Console.WriteLine("Opción no válida. Usa SI o NO. Inténtalo de nuevo.");
+                                        Menssage.InvalidData();
+                                        Console.WriteLine("Usa SI o NO. Inténtalo de nuevo.");
                                 }
                         }
 
@@ -158,6 +165,7 @@ namespace PruebaVeterinaryCenter.models
                                 microchipNumber = Console.ReadLine();
                                 if (string.IsNullOrWhiteSpace(microchipNumber))
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("El número del microchip no puede estar vacío. Inténtalo de nuevo.");
                                         continue;
                                 }
@@ -170,6 +178,7 @@ namespace PruebaVeterinaryCenter.models
                                 barkVolume = Console.ReadLine();
                                 if (string.IsNullOrWhiteSpace(barkVolume))
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("El volumen del ladrido no puede estar vacío. Inténtalo de nuevo.");
                                         continue;
                                 }
@@ -206,7 +215,8 @@ namespace PruebaVeterinaryCenter.models
                                 }
                                 else
                                 {
-                                        Console.WriteLine("Opción no válida.Inténtalo de nuevo.");
+                                        Menssage.InvalidData();
+                                        Console.WriteLine("Inténtalo de nuevo.");
                                         continue;
                                 }
                         }
@@ -232,6 +242,7 @@ namespace PruebaVeterinaryCenter.models
                                 name = Console.ReadLine();
                                 if (string.IsNullOrWhiteSpace(name))
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("El nombre no puede estar vacío. Inténtalo de nuevo.");
                                         continue;
                                 }
@@ -262,6 +273,7 @@ namespace PruebaVeterinaryCenter.models
                                 breed = Console.ReadLine();
                                 if (string.IsNullOrWhiteSpace(breed))
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("La raza no puede estar vacía. Inténtalo de nuevo.");
                                         continue;
                                 }
@@ -274,6 +286,7 @@ namespace PruebaVeterinaryCenter.models
                                 color = Console.ReadLine();
                                 if (string.IsNullOrWhiteSpace(color))
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("El color no puede estar vacío. Inténtalo de nuevo.");
                                         continue;
                                 }
@@ -289,6 +302,7 @@ namespace PruebaVeterinaryCenter.models
                                 }
                                 else
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("El peso debe ser un número positivo. Inténtalo de nuevo.");
                                 }
                         }
@@ -309,6 +323,7 @@ namespace PruebaVeterinaryCenter.models
                                 }
                                 else
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("Opción invalida,recuerda 1 o 2 Inténtalo de nuevo.");
                                 }
                         }
@@ -329,7 +344,8 @@ namespace PruebaVeterinaryCenter.models
                                 }
                                 else
                                 {
-                                        Console.WriteLine("Opción no válida. Usa SI o NO. Inténtalo de nuevo.");
+                                        Menssage.InvalidData();
+                                        Console.WriteLine("Usa SI o NO. Inténtalo de nuevo.");
                                 }
                         }
 
@@ -362,6 +378,7 @@ namespace PruebaVeterinaryCenter.models
                                 }
                                 else
                                 {
+                                        Menssage.InvalidData();
                                         Console.WriteLine("Opción no válida.Inténtalo de nuevo.");
                                         continue;
                                 }
