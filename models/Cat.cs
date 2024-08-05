@@ -9,7 +9,7 @@ namespace PruebaVeterinaryCenter.models
         public string FurLength;
 
         //miembro constructor
-        public Cat(string name,DateOnly birthdate,string breed,string color,double weightInKg,bool breedingStatus,string furLength):base(name,birthdate,breed,color,weightInKg)
+        public Cat(string name,DateOnly birthdate,string breed,string color,double weightInKg,bool isCastrated,bool breedingStatus,string furLength):base(name,birthdate,breed,color,weightInKg,isCastrated)
         {
             this.BreedingStatus = breedingStatus;
             this.FurLength = furLength;

@@ -13,9 +13,12 @@ namespace PruebaVeterinaryCenter.models
         protected string Color;
         protected double WeightnKg;
 
+        //creo un nuevo atributo para la validacion de castrados
+        public bool isCastrated;
+
 
         //miembros constructor
-        public Animal(string name,DateOnly birthDate,string breed,string color,double weightInKg)
+        public Animal(string name,DateOnly birthDate,string breed,string color,double weightInKg,bool isCastrated)
         {
             this.Id = ++currentId; // Incrementa y asigna un nuevo Id único
             this.Name = name;
@@ -23,6 +26,7 @@ namespace PruebaVeterinaryCenter.models
             this.Breed = breed;
             this.Color = color;
             this.WeightnKg = weightInKg;
+            this.isCastrated = isCastrated;
         }
 
         public void ShowInformacion(){

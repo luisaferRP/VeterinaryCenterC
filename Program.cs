@@ -5,10 +5,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        bool bandera = true;
         int option;
 
         do
         {
+            //bool bandera = true;
             InterfazVisual.Visualize();
 
             try
@@ -82,6 +84,12 @@ class Program
                         case 5:
                             seeAnimalById();
                             break;
+                        case 6:
+                            //castrat
+                            break;
+                        case 7:
+                            bandera = false;
+                            break;
 
                         default:
                             break;
@@ -98,75 +106,15 @@ class Program
             }
 
 
-        } while (true);
+        } while (bandera);
 
         //metodos----------------------------------
         //perro------------------------------------------------
         void CreateDog()
         {
             Console.WriteLine("¡Vamos a registrar un perro!");
-
-            Console.WriteLine("Nombre:");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("Fecha de nacimiento: AAAA-MM-DD");
-            DateOnly birthDate;
-            if (DateOnly.TryParse(Console.ReadLine(), out birthDate))
-            {
-                // Obtengo fecha actual
-                DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
-
-                // Comparo la fecha de nacimiento con la fecha actual
-                if (birthDate >= currentDate)
-                {
-                    Console.WriteLine("La fecha de nacimiento no puede ser mayor que la fecha actual.");
-                }
-            } else
-            {
-                Console.WriteLine("La fecha ingresada no es válida. Asegúrate de usar el formato AAAA-MM-DD.");
-            }
-
-            Console.WriteLine("Raza:");
-            string breed = Console.ReadLine();
-
-            Console.WriteLine("Color:");
-            string color = Console.ReadLine();
-
-            Console.WriteLine("Peso en Kg:");
-            double weightInKg = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine(@"Temperamento: 
-            1.timido, 2.normal, 3.agresivo :");
-            string validation = Console.ReadLine().ToLower();
-            string temperament = validation == "1" ? "timido" : validation == "2" ? "normal" : validation == "3" ? "agresivo" : "invalide";
-
-
-            Console.WriteLine("¿El canino aun esta en estado de reprocucción? SI/NO:");
-            string status = Console.ReadLine().ToLower();
-            bool breedingStatus = status == "si" ? true : false;
-
-            Console.WriteLine("Numero del microship:");
-            string microchipNumber = Console.ReadLine();
-
-            Console.WriteLine("Volumen de ladrido :");
-            string barkVolume = Console.ReadLine();
-
-            Console.WriteLine(@"Tipo de pelo :
-            1.sin pelo, 2. pelo corto,
-            3.pelo mediano, 4. pelo largo) :");
-            string type = Console.ReadLine();
-            string coatType = type == "1" ? "sin pelo" : type == "2" ? "pelo corto" : type == "3" ? "pelo mediano" : type == "4" ? "pelo largo" : "invalide";
-
-            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(breed) || string.IsNullOrWhiteSpace(temperament) || string.IsNullOrWhiteSpace(microchipNumber))
-            {
-                Console.WriteLine("Algun dato ingresado no es valido,por favor verifica antes de crear!");
-                
-            }else
-            {
-                //agregar un perro
-                Dog dog = new Dog(name, birthDate, breed, color, weightInKg, breedingStatus, temperament, microchipNumber, barkVolume, coatType);
-                VeterinaryClinic.SaveDog(dog);
-                
+            Dog ver = ManagerApp.createDog();
+            VeterinaryClinic.SaveDog(ver);
             }
         }
 
@@ -214,6 +162,10 @@ class Program
             Console.WriteLine("Peso en Kg:");
             double weightInKg = Convert.ToDouble(Console.ReadLine());
 
+            Console.WriteLine("¿El canino esta castrado? 1.SI , 2.NO:");
+            string castrate = Console.ReadLine();
+            bool isCastrated = castrate == "1" ? true : false;
+
             Console.WriteLine("¿El felino aun esta en estado de reprocucción? SI/NO:");
             string status = Console.ReadLine().ToLower();
             bool breedingStatus = status == "si" ? true : false;
@@ -230,11 +182,9 @@ class Program
                 
             }else
             {
-                Cat cat = new Cat(name, birthDate, breed, color, weightInKg,breedingStatus,furLength);
+                Cat cat = new Cat(name, birthDate, breed, color, weightInKg,isCastrated,breedingStatus,furLength);
                 VeterinaryClinic.SaveCat(cat);
             }
-
-
         }
     
         //eliminar
@@ -267,4 +217,3 @@ class Program
 
         }
     }
-}

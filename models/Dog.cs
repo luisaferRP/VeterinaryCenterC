@@ -12,8 +12,8 @@ namespace PruebaVeterinaryCenter.models
         public string CoatType;
 
         //miembro constructor
-        public Dog(string name,DateOnly birthdate,string breed,string color,double weightInKg,bool breedingStatus,string temperament,
-        string microchipNumber,string barkVolume,string coatType): base(name,birthdate,breed,color,weightInKg)
+        public Dog(string name,DateOnly birthdate,string breed,string color,double weightInKg,bool isCastrated,bool breedingStatus,string temperament,
+        string microchipNumber,string barkVolume,string coatType): base(name,birthdate,breed,color,weightInKg,isCastrated)
         {
             this.BreedingStatus = breedingStatus;
             this.Temperament = temperament;
