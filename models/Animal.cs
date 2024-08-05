@@ -18,7 +18,7 @@ namespace PruebaVeterinaryCenter.models
 
 
         //miembros constructor
-        public Animal(string name,DateOnly birthDate,string breed,string color,double weightInKg,bool isCastrated)
+        public Animal(string name, DateOnly birthDate, string breed, string color, double weightInKg, bool isCastrated)
         {
             this.Id = ++currentId; // Incrementa y asigna un nuevo Id único
             this.Name = name;
@@ -29,31 +29,49 @@ namespace PruebaVeterinaryCenter.models
             this.isCastrated = isCastrated;
         }
 
-        public void ShowInformacion(){
+        public void ShowInformacion()
+        {
             Console.WriteLine(@$"
             ________________________________________________________________________________
             Id:{Id,-5} Nombre:{Name,-2}, Fecha Nacimiento: {BirthDate},
             Raza: {Breed} , Color: {Color}, Peso : {WeightnKg},");
         }
 
-        protected void BasicReview(){
+        protected void BasicReview()
+        {
 
         }
 
-        protected int CalculateAgeInMonths(){
-            var age = DateOnly.Today.Year - BirthDate.Year;
-            
-            return age;
 
+        protected int CalculateAgeInMonths()
+        {
+            DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
 
+            // Calcula la diferencia en años y meses
+            int yearsDifference = currentDate.Year - BirthDate.Year;
+            int monthsDifference = currentDate.Month - BirthDate.Month;
+
+            // Ajusta la diferencia en años
+            if (monthsDifference < 0)
+            {
+                yearsDifference--;
+                monthsDifference += 12;
+            }
+
+            // Calcula la edad total en meses
+            int ageInMonths = (yearsDifference * 12) + monthsDifference;
+
+            return ageInMonths;
         }
 
-        public int ReturnId(){
+        public int ReturnId()
+        {
             return Id;
         }
 
         //retornar raza
-        public string RetrunBreed(){
+        public string RetrunBreed()
+        {
             return Breed.ToString();
         }
     }

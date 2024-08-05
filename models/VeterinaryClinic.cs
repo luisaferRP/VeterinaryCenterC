@@ -12,9 +12,7 @@ namespace PruebaVeterinaryCenter.models
         public static List<Cat> Cats = new List<Cat>();
 
         //miembros metodos
-        public VeterinaryClinic()
-        {
-        }
+        public VeterinaryClinic(){}
 
         //constructor con parametros
         public VeterinaryClinic(string name, string address)
@@ -186,8 +184,9 @@ namespace PruebaVeterinaryCenter.models
         }
 
         //Buscar animal para castrar
-        public void CastrateAnimal(int idAnimal)
+        public void ValidationCastrateAnimal(int idAnimal)
         {
+            Console.WriteLine("verificando...");
             var findDog = Dogs.Where(item => item.ReturnId() == idAnimal).Select(item => new
             {
                 id = item.ReturnId(),

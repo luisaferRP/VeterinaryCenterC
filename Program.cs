@@ -7,6 +7,7 @@ class Program
     {
         bool bandera = true;
         int option;
+        var VeterinaryClinic = new VeterinaryClinic("Todos juntos","cra 23 # 7b");
 
         do
         {
@@ -88,6 +89,9 @@ class Program
                             CastrateAnimal();
                             break;
                         case 7:
+                            break;
+                        case 8:
+                            Console.Write("¡Chao! Te deseo un lindo día");
                             Console.WriteLine("Preciona cualquier tecla para salir");
                             Console.Read();
                             bandera = false;
@@ -123,8 +127,7 @@ class Program
             Console.WriteLine("Ingrese el id de el perro que desea eliminar: ");
             int id = Convert.ToInt32(Console.ReadLine());
 
-            var deleteDog = new VeterinaryClinic();
-            deleteDog.DeleteDog(id);
+            VeterinaryClinic.DeleteDog(id);
         }
     
 
@@ -141,8 +144,7 @@ class Program
             Console.WriteLine("Ingrese el id de el gato que desea eliminar: ");
             int id = Convert.ToInt32(Console.ReadLine());
 
-            var deleteCat = new VeterinaryClinic();
-            deleteCat.DeleteCat(id);
+            VeterinaryClinic.DeleteCat(id);
 
         }
 
@@ -151,8 +153,7 @@ class Program
             Console.WriteLine("¿Qué tipo de animal deseas ver? Escribe la raza: ");
             string breed = Console.ReadLine().ToLower();
 
-            var seeAnimal = new VeterinaryClinic();
-            seeAnimal.ShowAnimals(breed);
+            VeterinaryClinic.ShowAnimals(breed);
         }
     
         //ver animal por id
@@ -161,17 +162,48 @@ class Program
             int id = Convert.ToInt32(Console.ReadLine());
 
             var seeAnimal = new VeterinaryClinic();
-            seeAnimal.ShowPatient(id);
+            VeterinaryClinic.ShowPatient(id);
 
         }
-    
+
+        //peluqueria de animales
+        void HairdressAnimal(){
+            //ParallelLoopState 1 buscar  desde aca y despues la ma en dog
+
+            while (true)
+            {
+                Console.WriteLine("¿Qué tipo de animal desea peluquear? 1.Perro o 2.Gato");
+                int option = Convert.ToInt16(Console.ReadLine()); 
+
+                if(option == 1){
+                    Console.WriteLine("Ingresa el id de el perro: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    var findDog = VeterinaryClinic.Dogs.FirstOrDefault(item => item.ReturnId() == id);
+                    if (findDog != null)
+                    {
+                        findDog.Hairdress();
+                    }
+                    break;
+
+                }else if(option == 2){
+                    Console.WriteLine("Ingresa el id de el gato: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    var findCat = VeterinaryClinic.Cats.FirstOrDefault(item => item.ReturnId() == id);
+                    if (findCat != null)
+                    {
+                        findCat.Hairdress();
+                    }
+
+                    break;
+                }
+                
+            }
+
+        }
+
         //animal castrado
         void CastrateAnimal(){
-            Console.Write("Ingrese el id del animal que desea castrar: ");
-            int id = Convert.ToInt32(Console.ReadLine());
-
-            var seeAnimal = new VeterinaryClinic();
-            seeAnimal.CastrateAnimal(id);
+            Dog.CastrateAnimal();
         }
     
     }

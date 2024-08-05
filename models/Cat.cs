@@ -21,13 +21,27 @@ namespace PruebaVeterinaryCenter.models
         }
 
         //peluqueria
-        public void Hairdress(){}
+        public void Hairdress(){
+            if (FurLength == "pelo corto")
+            {
+                Console.Write("El pelaje de el gato es muy corto para ser peluqueado.");
+            }else if(FurLength == "pelo mediano")
+            {
+                Console.WriteLine("El pelaje de el gato es mediano,te recomiendo cortes de puntas.");
+            }else if(FurLength == "pelo largo")
+            {
+                Console.WriteLine("El pelaje de el gato es largo,puedes hacer cualquier tipo de corte.");
+            }else{
+                Console.WriteLine("El pelaje del gato es sin pelo,no es posible peluquear.");
+            }
+        }
 
 
         public void ShowInformacionCat(){
             base.ShowInformacion(); 
             Console.WriteLine(@$"
-            Estado de reproducción: {BreedingStatus}, Tipo de pelo: {FurLength}
+            Estado de reproducción: {BreedingStatus}, Tipo de pelo: {FurLength},
+            Años en meses: {CalculateAgeInMonths()}
             ________________________________________________________________________________");
         }
         
