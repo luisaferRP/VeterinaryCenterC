@@ -15,6 +15,11 @@ namespace PruebaVeterinaryCenter.models
         public Dog(string name,DateOnly birthdate,string breed,string color,double weightInKg,bool breedingStatus,string temperament,
         string microchipNumber,string barkVolume,string coatType): base(name,birthdate,breed,color,weightInKg)
         {
+            this.BreedingStatus = breedingStatus;
+            this.Temperament = temperament;
+            this.MicrochipNumber = microchipNumber;
+            this.BarkVolume = barkVolume;
+            this.CoatType = coatType;
         }
 
 //animal castrado
@@ -24,6 +29,15 @@ namespace PruebaVeterinaryCenter.models
 
 //peluqueria
         public void Hairdress(){}
+
+        public void ShowInformacionDog(){
+            base.ShowInformacion(); 
+            Console.WriteLine(@$"
+            Estado de reproducción: {BreedingStatus}, Temperamento: {Temperament}, 
+            Numero de microchip: {MicrochipNumber},
+            Volumen del ruido de ladrar: {BarkVolume} , Tipo de pelo: {CoatType}
+            ________________________________________________________");
+        }
 
     }
 }

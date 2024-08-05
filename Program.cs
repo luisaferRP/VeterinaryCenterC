@@ -31,54 +31,72 @@ class Program
                             int option2;
                             bool optionSuccess = int.TryParse(Console.ReadLine(), out option2);
 
-                                switch (option2)
-                                {
-                                    case 1:
-                                        break;
-                                    case 2:
-                                        break;
-                                    case 3:
-                                        break;
+                            switch (option2)
+                            {
+                                case 1:
+                                    CreateDog();
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    DeleteDog();
+                                    break;
 
-                                    
-                                    default:
-                                        break;
-                                }
+
+                                default:
+                                    break;
+                            }
 
                             break;
-                        case 2: 
+                        case 2:
                             break;
-                        case 3: 
+                        case 3:
+                            var see = new VeterinaryClinic();
+                            see.ShowAllPatients();
                             break;
-                        
+
                         default:
                             break;
                     }
-                    
+
                 }
 
-                
+
             }
             catch (System.Exception)
             {
-                
+
                 throw;
             }
 
-            
+
         } while (true);
 
         //metodos----------------------------------
-        //agregar un perro
-        void CreateDog(){
+        //perro
+        void CreateDog()
+        {
             Console.WriteLine("¡Vamos a registrar un perro!");
 
             Console.WriteLine("Nombre:");
             string name = Console.ReadLine();
 
             Console.WriteLine("Fecha de nacimiento: AAAA-MM-DD");
-            DateOnly brithDate;
-            bool brith = DateOnly.TryParse(Console.ReadLine(), out brithDate);
+            DateOnly birthDate;
+            if (DateOnly.TryParse(Console.ReadLine(), out birthDate))
+            {
+                // Obtengo fecha actual
+                DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
+
+                // Comparo la fecha de nacimiento con la fecha actual
+                if (birthDate >= currentDate)
+                {
+                    Console.WriteLine("La fecha de nacimiento no puede ser mayor que la fecha actual.");
+                }
+            } else
+            {
+                Console.WriteLine("La fecha ingresada no es válida. Asegúrate de usar el formato AAAA-MM-DD.");
+            }
 
             Console.WriteLine("Raza:");
             string breed = Console.ReadLine();
@@ -92,7 +110,7 @@ class Program
             Console.WriteLine(@"Temperamento: 
             1.timido, 2.normal, 3.agresivo :");
             string validation = Console.ReadLine().ToLower();
-            string temperament = validation == "1" ? "timido" : validation == "2" ? "normal" : validation == "3" ? "agresivo": "invalide";
+            string temperament = validation == "1" ? "timido" : validation == "2" ? "normal" : validation == "3" ? "agresivo" : "invalide";
 
 
             Console.WriteLine("¿El canino aun esta en estado de reprocucción? SI/NO:");
@@ -112,16 +130,16 @@ class Program
             string coatType = type == "1" ? "sin pelo" : type == "2" ? "pelo corto" : type == "3" ? "pelo mediano" : type == "4" ? "pelo largo" : "invalide";
 
             //agregar un perro
-            Dog dog = new Dog(name,brithDate,breed,color,weightInKg,breedingStatus,temperament,microchipNumber,barkVolume,coatType);
+            Dog dog = new Dog(name, birthDate, breed, color, weightInKg, breedingStatus, temperament, microchipNumber, barkVolume, coatType);
             VeterinaryClinic.SaveDog(dog);
-            
 
 
 
 
 
 
-            
+
+
 
 
 
@@ -130,5 +148,14 @@ class Program
 
         }
 
+        //eliminar
+        void DeleteDog(){
+            Console.WriteLine("Ingrese el id del perro que desea eliminar: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            var deleteDog = new VeterinaryClinic();
+            deleteDog.DeleteDog(id);
+
+        }
     }
 }

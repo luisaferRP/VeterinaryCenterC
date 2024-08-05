@@ -1,3 +1,4 @@
+using System.Data;
 using System.Runtime.Serialization;
 
 namespace PruebaVeterinaryCenter.models
@@ -25,7 +26,10 @@ namespace PruebaVeterinaryCenter.models
         }
 
         public void ShowInformacion(){
-            
+            Console.WriteLine(@$"
+            ________________________________________________________
+            Id:{Id} Nombre:{Name}, Fecha Nacimiento: {BirthDate},
+            Raza: {Breed} , Color: {Color}, Peso : {WeightnKg},");
         }
 
         protected void BasicReview(){
@@ -34,6 +38,10 @@ namespace PruebaVeterinaryCenter.models
 
         protected int CalculateAgeInMonths(){
             return 0;
+        }
+
+        public int ReturnId(){
+            return Id;
         }
     }
 }
