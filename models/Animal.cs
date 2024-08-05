@@ -39,6 +39,9 @@ namespace PruebaVeterinaryCenter.models
 
         protected void BasicReview()
         {
+            Console.WriteLine(@$"
+            Id:{Id,-5} Nombre:{Name,-2}, Fecha Nacimiento: {BirthDate},
+            Raza: {Breed} ,Peso : {WeightnKg},");
 
         }
 
