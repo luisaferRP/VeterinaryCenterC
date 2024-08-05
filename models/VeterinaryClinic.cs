@@ -170,6 +170,8 @@ namespace PruebaVeterinaryCenter.models
                     Console.WriteLine("Se ha cancelado la eliminación...");
                 }
 
+            }else{
+                Console.WriteLine("Dato no encontrado...");
             }
         }
 

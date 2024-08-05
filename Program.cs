@@ -26,6 +26,7 @@ class Program
                     switch (option)
                     {
                         case 1:
+                        Console.Clear();
                             Console.WriteLine(@"
                             ============= Perro =============
                             1.Agregar un perro.
@@ -45,14 +46,13 @@ class Program
                                 case 3:
                                     DeleteDog();
                                     break;
-
-
                                 default:
                                     break;
                             }
 
                             break;
                         case 2:
+                        Console.Clear();
                         Console.WriteLine(@"
                             ============= Gato =============
                             1.Agregar un gato.
@@ -138,7 +138,6 @@ class Program
         void DeleteDog(){
             Console.WriteLine("Ingrese el id de el perro que desea eliminar: ");
             int id = Convert.ToInt32(Console.ReadLine());
-
             VeterinaryClinic.DeleteDog(id);
         }
     
