@@ -67,6 +67,7 @@ class Program
                                     CreateCat();
                                     break;
                                 case 2:
+                                    UpdateCat();
                                     break;
                                 case 3:
                                     DeleteCat();
@@ -149,7 +150,16 @@ class Program
             Cat newCat = ManagerApp.CreateCat();
             VeterinaryClinic.SaveCat(newCat);
         }
-    
+
+        //actualizar gato
+        void UpdateCat(){
+            Console.WriteLine("Ingrese el id del gato que desea actualizar:");
+            int id = Convert.ToInt16(Console.ReadLine()); 
+
+            var findCat = VeterinaryClinic.Cats.FirstOrDefault(item => item.ReturnId() == id);
+            VeterinaryClinic.UpdateCat(findCat);
+
+        }
         //eliminar
         void DeleteCat(){
             Console.WriteLine("Ingrese el id de el gato que desea eliminar: ");
