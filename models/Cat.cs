@@ -17,6 +17,13 @@ namespace PruebaVeterinaryCenter.models
 
         //miembros metodos
         public void CastrateAnimal(){
+            Console.WriteLine("Verificación de castración...");
+
+            Console.Write("Ingrese el id del animal que desea castrar: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            var seeAnimal = new VeterinaryClinic();
+            seeAnimal.ValidationCastrateAnimal(id);
 
         }
 
@@ -24,10 +31,10 @@ namespace PruebaVeterinaryCenter.models
         public void Hairdress(){
             if (FurLength == "pelo corto")
             {
-                Console.Write("El pelaje de el gato es muy corto para ser peluqueado.");
+                Console.Write("El pelaje de el gato es muy corto, recomendació: solo cortar puntas.");
             }else if(FurLength == "pelo mediano")
             {
-                Console.WriteLine("El pelaje de el gato es mediano,te recomiendo cortes de puntas.");
+                Console.WriteLine("El pelaje de el gato es mediano,te recomiendo cortes basicos.");
             }else if(FurLength == "pelo largo")
             {
                 Console.WriteLine("El pelaje de el gato es largo,puedes hacer cualquier tipo de corte.");

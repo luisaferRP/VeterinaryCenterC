@@ -40,6 +40,7 @@ class Program
                                     CreateDog();
                                     break;
                                 case 2:
+                                    UpdateDod();
                                     break;
                                 case 3:
                                     DeleteDog();
@@ -89,9 +90,10 @@ class Program
                             CastrateAnimal();
                             break;
                         case 7:
+                            HairdressAnimal();
                             break;
                         case 8:
-                            Console.Write("¡Chao! Te deseo un lindo día");
+                            Console.WriteLine("¡Chao! Te deseo un lindo día");
                             Console.WriteLine("Preciona cualquier tecla para salir");
                             Console.Read();
                             bandera = false;
@@ -122,6 +124,15 @@ class Program
             VeterinaryClinic.SaveDog(newDog);
         }
 
+        //actualizar perro
+        void UpdateDod(){
+            Console.WriteLine("Ingrese el id del perro que desea actualizar:");
+            int id = Convert.ToInt16(Console.ReadLine()); 
+
+            var findDog = VeterinaryClinic.Dogs.FirstOrDefault(item => item.ReturnId() == id);
+            VeterinaryClinic.UpdateDog(findDog);
+            
+        }
         //eliminar
         void DeleteDog(){
             Console.WriteLine("Ingrese el id de el perro que desea eliminar: ");
@@ -172,7 +183,7 @@ class Program
 
             while (true)
             {
-                Console.WriteLine("¿Qué tipo de animal desea peluquear? 1.Perro o 2.Gato");
+                Console.WriteLine("¿Qué tipo de animal desea peluquear? 1. Perro o 2. Gato");
                 int option = Convert.ToInt16(Console.ReadLine()); 
 
                 if(option == 1){

@@ -12,7 +12,7 @@ namespace PruebaVeterinaryCenter.models
         public static List<Cat> Cats = new List<Cat>();
 
         //miembros metodos
-        public VeterinaryClinic(){}
+        public VeterinaryClinic() { }
 
         //constructor con parametros
         public VeterinaryClinic(string name, string address)
@@ -39,14 +39,66 @@ namespace PruebaVeterinaryCenter.models
         //metodo para actualizar un perro 
         public void UpdateDog(Dog dog)
         {
+            string color = string.Empty;
+            double weightInKg = 0.0;
+            bool breedingStatus = false;
 
+            int option;
+
+            Console.Write($"\nElige una opcion de lo que deseas actualizar del perro:\n1.Color\n2.Peso en kilogramos\n3.Castraccion\n4.Temperamento\n5.Volumen de ladrido\n6.Tamaño del pelo\n-----> ");
+            option = Convert.ToInt32(Console.ReadLine());
+
+            switch (option)
+            {
+                case 1:
+                    Console.Write("Ingresa el nuevo color del perro\n------> ");
+                    color = Console.ReadLine();
+                    break;
+                case 2:
+                    Console.Write("Ingresa el peso del perro en kilogramos\n------> ");
+                    weightInKg = Convert.ToDouble(Console.ReadLine());
+                    break;
+                case 3:
+                    while (true)
+                    {
+                        Console.WriteLine("¿Cuál es el estado de castración del perro? Elige una opción:");
+                        Console.WriteLine("1. Castrado , 2. No castrado");
+                        option = Convert.ToInt32(Console.ReadLine());
+
+                        if (option == 1)
+                        {
+                            breedingStatus = true;
+                            break;
+                        }
+                        else if (option == 2)
+                        {
+                            breedingStatus = false;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Lo sentimos, pero debes elegir una opción disponible.");
+                            continue;
+                        }
+                    }
+                    break;
+                // Se pueden añadir más casos aquí según las opciones de actualización disponibles
+                default:
+                    Console.WriteLine("Error, elige una opción válida.");
+                    return; // Salir del método si la opción no es válida
+            }
+
+            Console.WriteLine($"El perro {dog.ReturnId()} ha sido ACTUALIZADO con éxito.");
+            dog.UpdateData(color, weightInKg, breedingStatus);
         }
 
         //metodo para actualizar un gato
-        public void UpdateCat(Dog dog)
+        public void UpdateCat(Cat cat)
         {
 
         }
+
+
 
         //eliminar perro
         public void DeleteDog(int id)

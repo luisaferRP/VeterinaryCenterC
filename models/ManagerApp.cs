@@ -352,8 +352,8 @@ namespace PruebaVeterinaryCenter.models
                         while (true)
                         {
                                 Console.WriteLine(@"Tipo de pelo :
-                                1.sin pelo, 2. pelo corto,
-                                3.pelo mediano, 4. pelo largo :");
+                        1.sin pelo, 2. pelo corto,
+                        3.pelo mediano, 4. pelo largo :");
                                 string type = Console.ReadLine();
                                 if (type == "1")
                                 {

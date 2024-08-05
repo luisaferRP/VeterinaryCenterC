@@ -74,6 +74,12 @@ namespace PruebaVeterinaryCenter.models
         {
             return Breed.ToString();
         }
+
+        public void UpdateData(string color, double weightInKg, bool isCastrated){
+            this.Color = color;
+            this.WeightnKg = weightInKg;
+            this.isCastrated = isCastrated;
+        }
     }
 }
 
