@@ -31,7 +31,7 @@ namespace PruebaVeterinaryCenter.models
         }
 
         //metodo para agregar un gato a la clinica
-        public void SaveCat(Cat newCat)
+        public static void SaveCat(Cat newCat)
         {
             Cats.Add(newCat);
             Menssage.CreateSucces();
@@ -60,7 +60,7 @@ namespace PruebaVeterinaryCenter.models
                 Console.WriteLine("¡Oye! ¿Seguro qué deseas eliminar este animal? SI/NO");
                 string confirmation = Console.ReadLine().Trim().ToLower();
 
-                if (string.IsNullOrWhiteSpace(confirmation) && confirmation == "si")
+                if (string.IsNullOrWhiteSpace(confirmation) == false && confirmation == "si")
                 {
                     Dogs.Remove(DogFind);
                     Menssage.DeleteSuccess();
@@ -83,7 +83,7 @@ namespace PruebaVeterinaryCenter.models
                 Console.WriteLine("¡Oye! ¿Seguro qué deseas eliminar este animal? SI/NO");
                 string confirmation = Console.ReadLine().Trim().ToLower();
 
-                if (string.IsNullOrWhiteSpace(confirmation) && confirmation == "si")
+                if (string.IsNullOrWhiteSpace(confirmation) == false && confirmation == "si")
                 {
                     Cats.Remove(CatFind);
                     Menssage.DeleteSuccess();
@@ -122,7 +122,7 @@ namespace PruebaVeterinaryCenter.models
 
                 foreach (var cat in Cats)
                 {
-                    cat.ShowInformacion();
+                    cat.ShowInformacionCat();
 
                 }
             }

@@ -49,6 +49,28 @@ class Program
 
                             break;
                         case 2:
+                        Console.WriteLine(@"
+                            ============= Gato =============
+                            1.Agregar un gato.
+                            2.Actualizar un gato.
+                            3.ELiminar un gato.");
+                            int option3;
+                            bool optionSucces = int.TryParse(Console.ReadLine(), out option3);
+
+                            switch (option3)
+                            {
+                                case 1:
+                                    CreateCat();
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    //DeleteCat();
+                                    break;
+                                
+                                default:
+                                    break;
+                            }
                             break;
                         case 3:
                             var see = new VeterinaryClinic();
@@ -73,7 +95,7 @@ class Program
         } while (true);
 
         //metodos----------------------------------
-        //perro
+        //perro------------------------------------------------
         void CreateDog()
         {
             Console.WriteLine("¡Vamos a registrar un perro!");
@@ -129,23 +151,17 @@ class Program
             string type = Console.ReadLine();
             string coatType = type == "1" ? "sin pelo" : type == "2" ? "pelo corto" : type == "3" ? "pelo mediano" : type == "4" ? "pelo largo" : "invalide";
 
-            //agregar un perro
-            Dog dog = new Dog(name, birthDate, breed, color, weightInKg, breedingStatus, temperament, microchipNumber, barkVolume, coatType);
-            VeterinaryClinic.SaveDog(dog);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(breed) || string.IsNullOrWhiteSpace(temperament) || string.IsNullOrWhiteSpace(microchipNumber))
+            {
+                Console.WriteLine("Algun dato ingresado no es valido,por favor verifica antes de crear!");
+                
+            }else
+            {
+                //agregar un perro
+                Dog dog = new Dog(name, birthDate, breed, color, weightInKg, breedingStatus, temperament, microchipNumber, barkVolume, coatType);
+                VeterinaryClinic.SaveDog(dog);
+                
+            }
         }
 
         //eliminar
@@ -155,7 +171,65 @@ class Program
 
             var deleteDog = new VeterinaryClinic();
             deleteDog.DeleteDog(id);
+        }
+    
+
+        //gato------------------------------------
+        void CreateCat()
+        {
+            Console.WriteLine("¡Vamos a registrar un gato!");
+
+            Console.WriteLine("Nombre:");
+            string name = Console.ReadLine().Trim();
+
+            Console.WriteLine("Fecha de nacimiento: AAAA-MM-DD");
+            DateOnly birthDate;
+            if (DateOnly.TryParse(Console.ReadLine(), out birthDate))
+            {
+                // Obtengo fecha actual
+                DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
+
+                // Comparo la fecha de nacimiento con la fecha actual
+                if (birthDate >= currentDate)
+                {
+                    Console.WriteLine("La fecha de nacimiento no puede ser mayor que la fecha actual.");
+                }
+            } else
+            {
+                Console.WriteLine("La fecha ingresada no es válida. Asegúrate de usar el formato AAAA-MM-DD.");
+            }
+
+            Console.WriteLine("Raza:");
+            string breed = Console.ReadLine();
+
+            Console.WriteLine("Color:");
+            string color = Console.ReadLine();
+
+            Console.WriteLine("Peso en Kg:");
+            double weightInKg = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("¿El felino aun esta en estado de reprocucción? SI/NO:");
+            string status = Console.ReadLine().ToLower();
+            bool breedingStatus = status == "si" ? true : false;
+
+            Console.WriteLine(@"Tipo de pelo :
+            1.sin pelo, 2. pelo corto,
+            3.pelo mediano, 4. pelo largo) :");
+            string type = Console.ReadLine();
+            string furLength = type == "1" ? "sin pelo" : type == "2" ? "pelo corto" : type == "3" ? "pelo mediano" : type == "4" ? "pelo largo" : "invalide";
+
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(breed) )
+            {
+                Console.WriteLine("Algún dato ingresado no es valido,por favor verifica antes de crear!");
+                
+            }else
+            {
+                Cat cat = new Cat(name, birthDate, breed, color, weightInKg,breedingStatus,furLength);
+                VeterinaryClinic.SaveCat(cat);
+            }
+
 
         }
+    
     }
 }

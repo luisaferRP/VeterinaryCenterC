@@ -22,6 +22,14 @@ namespace PruebaVeterinaryCenter.models
 
         //peluqueria
         public void Hairdress(){}
+
+
+        public void ShowInformacionCat(){
+            base.ShowInformacion(); 
+            Console.WriteLine(@$"
+            Estado de reproducción: {BreedingStatus}, Tipo de pelo: {FurLength}
+            ________________________________________________________");
+        }
         
     }
 }
