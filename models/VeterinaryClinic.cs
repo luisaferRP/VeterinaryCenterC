@@ -138,10 +138,9 @@ namespace PruebaVeterinaryCenter.models
                         }
                     }
                     break;
-                // Se pueden añadir más casos aquí según las opciones de actualización disponibles
                 default:
                     Console.WriteLine("Error, elige una opción válida.");
-                    return; // Salir del método si la opción no es válida
+                    return; 
             }
 
             Console.WriteLine($"El gato con id: {cat.ReturnId()} ha sido ACTUALIZADO con éxito.");
