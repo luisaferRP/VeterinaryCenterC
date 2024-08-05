@@ -43,6 +43,11 @@ namespace PruebaVeterinaryCenter.models
         public int ReturnId(){
             return Id;
         }
+
+        //retornar raza
+        public string RetrunBreed(){
+            return Breed.ToString();
+        }
     }
 }
 

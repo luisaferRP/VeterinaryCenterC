@@ -65,7 +65,7 @@ class Program
                                 case 2:
                                     break;
                                 case 3:
-                                    //DeleteCat();
+                                    DeleteCat();
                                     break;
                                 
                                 default:
@@ -75,6 +75,9 @@ class Program
                         case 3:
                             var see = new VeterinaryClinic();
                             see.ShowAllPatients();
+                            break;
+                        case 4:
+                            SeeAnimalByType();
                             break;
 
                         default:
@@ -166,7 +169,7 @@ class Program
 
         //eliminar
         void DeleteDog(){
-            Console.WriteLine("Ingrese el id del perro que desea eliminar: ");
+            Console.WriteLine("Ingrese el id dee el perro que desea eliminar: ");
             int id = Convert.ToInt32(Console.ReadLine());
 
             var deleteDog = new VeterinaryClinic();
@@ -229,6 +232,26 @@ class Program
             }
 
 
+        }
+    
+        //eliminar
+        void DeleteCat(){
+            Console.WriteLine("Ingrese el id de el gato que desea eliminar: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            var deleteCat = new VeterinaryClinic();
+            deleteCat.DeleteCat(id);
+
+        }
+    
+
+        //ver animal por tipo
+        void SeeAnimalByType(){
+            Console.WriteLine("¿Qué tipo de animal deseas ver? Escribe la raza: ");
+            string breed = Console.ReadLine().ToLower();
+
+            var seeAnimal = new VeterinaryClinic();
+            seeAnimal.ShowAnimals(breed);
         }
     
     }

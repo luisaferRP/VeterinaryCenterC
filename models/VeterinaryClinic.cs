@@ -131,7 +131,25 @@ namespace PruebaVeterinaryCenter.models
         //Mostrar todos los animales
         public void ShowAnimals(string type)
         {
+            Console.WriteLine($"----------------------Animales de raza: {type}----------------------");
+            var findBreedD= Dogs.Where(item => item.RetrunBreed() == type ).ToList();
+            var findBreedC= Cats.Where(item => item.RetrunBreed() == type ).ToList();
 
+            if (findBreedD.Count == 0 && findBreedC.Count == 0)
+            {
+                Console.WriteLine("No hay animales de esa raza registrados.");
+            }else
+            {
+                foreach (var item in findBreedD)
+                {
+                    item.ShowInformacionDog();
+                }
+                foreach (var item in findBreedC)
+                {
+                    item.ShowInformacionCat();
+                }
+                
+            }
         }
 
         //mostrar paciente
